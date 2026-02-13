@@ -1,128 +1,433 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium E-Commerce Store - Shop the latest trends with secure checkout.">
-    <title>NovaStore | Premium Shopping</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>和 Wafuku — Japanese Traditional Clothing</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@400;500;600;700;900&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
+  <!-- ======================== NAVBAR ======================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">和<span>Wafuku</span></a>
 
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">NOVA<span>STORE</span></a>
-            
-            <nav class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#shop">Shop</a>
-                <a href="#blog">Blog</a>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search products...">
-                    <button aria-label="Search"><i class="fas fa-search"></i></button>
-                </div>
-            </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#products" class="nav-link">Collection</a></li>
+        <li><a href="#features" class="nav-link">Our Craft</a></li>
+        <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+        <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
+      </ul>
 
-            <div class="nav-icons">
-                <button id="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="#" class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </a>
-                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-            </div>
+      <div class="nav-actions">
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <header class="hero" id="home">
+    <div class="container hero-container">
+      <div class="hero-content" data-animate="fade-right">
+        <span class="hero-badge">🌸 Spring Collection 2026</span>
+        <h1>Timeless Beauty of <br /><span class="gradient-text">Japanese Tradition</span></h1>
+        <p>
+          Discover authentic kimono, yukata, hakama and more — handcrafted with
+          centuries-old techniques. Free worldwide shipping on orders over $100.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Explore Collection</a>
+          <a href="#features" class="btn btn-outline">Our Story</a>
         </div>
-    </header>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Elevate Your Lifestyle</h1>
-            <p>Experience seamless shopping with curated collections and lightning-fast delivery.</p>
-            <a href="#shop" class="btn-primary">Shop Collection</a>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>500+</strong>
+            <span>Garments</span>
+          </div>
+          <div class="stat">
+            <strong>98%</strong>
+            <span>Happy Clients</span>
+          </div>
+          <div class="stat">
+            <strong>50+</strong>
+            <span>Artisans</span>
+          </div>
         </div>
-    </section>
-
-    <section class="shop-section" id="shop">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Products</h2>
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="tech">Tech</button>
-                    <button class="filter-btn" data-filter="style">Style</button>
-                </div>
+      </div>
+      <div class="hero-image" data-animate="fade-left">
+        <div class="hero-image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&q=80"
+            alt="Beautiful Japanese kimono display"
+          />
+          <div class="floating-card card-1">
+            <span class="card-icon">🎌</span>
+            <div>
+              <strong>Made in Japan</strong>
+              <small>Authentic craftsmanship</small>
             </div>
-
-            <div class="product-grid" id="product-grid">
-                <div class="product-card" data-category="tech">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Premium Headphones">
-                        <span class="badge">New</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Sonic Pro Headphones</h3>
-                        <div class="rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            <span>(45)</span>
-                        </div>
-                        <p class="price">$299.00</p>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="style">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Minimalist Watch">
-                    </div>
-                    <div class="product-info">
-                        <h3>Titanium Minimalist Watch</h3>
-                        <div class="rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <span>(128)</span>
-                        </div>
-                        <p class="price">$150.00</p>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
+          </div>
+          <div class="floating-card card-2">
+            <span class="card-icon">⭐</span>
+            <div>
+              <strong>Top Rated</strong>
+              <small>4.9 / 5 average</small>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </header>
 
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-about">
-                <h3>NOVASTORE</h3>
-                <p>Secure payments, global shipping, and 24/7 support.</p>
-                <div class="socials">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter"></i>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns</a></li>
-                </ul>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Stay Updated</h4>
-                <form id="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p><center>&copy; 2026 NovaStore. SSL Secured & Encrypted.</center></p>
-        </div>
-    </footer>
+  <!-- ======================== CATEGORIES ======================== -->
+  <section class="categories" data-animate="fade-up">
+    <div class="container">
+      <div class="categories-grid">
+        <a href="#products" class="category-card">
+          <span class="category-icon">�</span>
+          <h3>Kimono</h3>
+        </a>
+        <a href="#products" class="category-card">
+          <span class="category-icon">🎐</span>
+          <h3>Yukata</h3>
+        </a>
+        <a href="#products" class="category-card">
+          <span class="category-icon">🎎</span>
+          <h3>Hakama</h3>
+        </a>
+        <a href="#products" class="category-card">
+          <span class="category-icon">🩴</span>
+          <h3>Geta &amp; Zori</h3>
+        </a>
+        <a href="#products" class="category-card">
+          <span class="category-icon">🪭</span>
+          <h3>Accessories</h3>
+        </a>
+        <a href="#products" class="category-card">
+          <span class="category-icon">🧶</span>
+          <h3>Obi Belts</h3>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ======================== PRODUCTS ======================== -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Our Collection — コレクション</span>
+        <h2>Traditional Garments</h2>
+        <p>Authentic Japanese clothing handcrafted by skilled artisans</p>
+      </div>
+
+      <div class="product-filters" data-animate="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="kimono">Kimono</button>
+        <button class="filter-btn" data-filter="yukata">Yukata</button>
+        <button class="filter-btn" data-filter="hakama">Hakama</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FEATURES / WHY US ======================== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Why Choose Us — 私たちの約束</span>
+        <h2>Crafted With Honor</h2>
+        <p>We bring centuries of Japanese textile tradition to your doorstep</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-animate="fade-up">
+          <div class="feature-icon">🎌</div>
+          <h3>Authentic Japanese</h3>
+          <p>Every garment is sourced directly from artisan workshops across Kyoto, Tokyo, and Kanazawa.</p>
+        </div>
+        <div class="feature-card" data-animate="fade-up">
+          <div class="feature-icon">✂️</div>
+          <h3>Handcrafted Quality</h3>
+          <p>Traditional techniques passed down through generations ensure exceptional craftsmanship.</p>
+        </div>
+        <div class="feature-card" data-animate="fade-up">
+          <div class="feature-icon">🌏</div>
+          <h3>Worldwide Shipping</h3>
+          <p>Free shipping on orders over $100. Carefully packaged to arrive in perfect condition.</p>
+        </div>
+        <div class="feature-card" data-animate="fade-up">
+          <div class="feature-icon">👘</div>
+          <h3>Styling Guidance</h3>
+          <p>Our kimono experts offer personalized advice on sizing, styling, and occasion matching.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROMO BANNER ======================== -->
+  <section class="promo-banner" data-animate="fade-up">
+    <div class="container promo-container">
+      <div class="promo-content">
+        <span class="promo-tag">春のセール — Spring Festival</span>
+        <h2>Get Up To <span class="gradient-text">40% Off</span></h2>
+        <p>
+          Celebrate the cherry blossom season with our biggest sale. Authentic
+          kimono and yukata at special prices. Limited time only!
+        </p>
+        <div class="promo-timer" id="promoTimer">
+          <div class="timer-block">
+            <span class="timer-value" id="days">00</span>
+            <span class="timer-label">Days</span>
+          </div>
+          <div class="timer-block">
+            <span class="timer-value" id="hours">00</span>
+            <span class="timer-label">Hours</span>
+          </div>
+          <div class="timer-block">
+            <span class="timer-value" id="minutes">00</span>
+            <span class="timer-label">Minutes</span>
+          </div>
+          <div class="timer-block">
+            <span class="timer-value" id="seconds">00</span>
+            <span class="timer-label">Seconds</span>
+          </div>
+        </div>
+        <a href="#products" class="btn btn-primary">Shop the Sale</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== TESTIMONIALS ======================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">Testimonials — お客様の声</span>
+        <h2>What Our Customers Say</h2>
+        <p>Real stories from customers who found their perfect traditional garment</p>
+      </div>
+
+      <div class="testimonials-slider" data-animate="fade-up">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The silk kimono I ordered is absolutely breathtaking. The craftsmanship
+              is incredible — you can feel the tradition in every stitch. Wore it to a
+              tea ceremony and received so many compliments!"
+            </p>
+            <div class="testimonial-author">
+              <img src="https://i.pravatar.cc/48?img=1" alt="Yuki M." />
+              <div>
+                <strong>Yuki M.</strong>
+                <span>Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "I bought a yukata for the summer festival and it fit perfectly.
+              The styling guide they sent was so helpful for tying the obi. 
+              Already planning my next purchase!"
+            </p>
+            <div class="testimonial-author">
+              <img src="https://i.pravatar.cc/48?img=3" alt="David K." />
+              <div>
+                <strong>David K.</strong>
+                <span>Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "As someone living outside Japan, finding authentic traditional clothing
+              was always difficult. Wafuku made it so easy. The hakama set I ordered
+              arrived beautifully packaged. Truly a premium experience."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://i.pravatar.cc/48?img=5" alt="Sakura T." />
+              <div>
+                <strong>Sakura T.</strong>
+                <span>Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Ordered matching couple yukata for our anniversary trip to Kyoto.
+              The quality exceeded all expectations. The customer service team even
+              helped me choose the perfect patterns. Highly recommended!"
+            </p>
+            <div class="testimonial-author">
+              <img src="https://i.pravatar.cc/48?img=8" alt="Emma & Ren" />
+              <div>
+                <strong>Emma &amp; Ren</strong>
+                <span>Verified Buyers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevBtn" aria-label="Previous">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="nextBtn" aria-label="Next">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== NEWSLETTER ======================== -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-container" data-animate="fade-up">
+        <div class="newsletter-content">
+          <h2>Join Our Community</h2>
+          <p>Subscribe to receive <strong>10% off</strong> your first order, seasonal styling tips, and early access to new collections from Japan.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <div class="input-group">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+              id="emailInput"
+            />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+          <p class="form-note">🔒 We respect your privacy. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="logo">和<span>Wafuku</span></a>
+          <p>Bringing the timeless elegance of Japanese traditional clothing to the world. Authentic craftsmanship you can trust.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Collection</a></li>
+            <li><a href="#features">Our Craft</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Sizing Guide</a></li>
+            <li><a href="#">Kimono Care Tips</a></li>
+            <li><a href="#">Returns &amp; Exchanges</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="contact-list">
+            <li>📍 Gion District, Kyoto, Japan</li>
+            <li>📧 hello@wafuku.jp</li>
+            <li>📞 +81 (75) 123-4567</li>
+            <li>🕐 Mon–Sat: 10AM–7PM JST</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 和Wafuku. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== CART SIDEBAR ======================== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart" id="closeCart" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <span>🛒</span>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn btn-primary btn-block">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ======================== BACK TO TOP ======================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- ======================== TOAST ======================== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
